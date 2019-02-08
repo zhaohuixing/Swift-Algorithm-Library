@@ -1,13 +1,14 @@
 //
-//  CStack.swift
-//  A stack class implemented by single linkedin list class CSingleList
+//  CQueue.swift
+//  A queue class implemented by single linkedin list class CSingleList
 //
-//  Created by Zhaohui Xing on 01/02/19.
+//  Created by Zhaohui Xing on 02/06/19.
 //  Copyright © 2019 Zhaohui Xing. All rights reserved.
 //
+
 import Foundation
 
-public class CStack<T : Equatable> {
+public class CQueue<T : Equatable> {
     let m_Container: CSingleLinkedList<T>
     
     //Make default initializer public to be accessible
@@ -16,16 +17,16 @@ public class CStack<T : Equatable> {
     }
 }
 
-extension CStack {
-    public func Push(value: T) {
-        let newHead : CSingleLinkedListNode<T> = CSingleLinkedListNode<T>(data:value)
-        m_Container.AddHead(head: newHead)
+extension CQueue {
+    public func Push_Back(value: T) {
+        let newNode : CSingleLinkedListNode<T> = CSingleLinkedListNode<T>(data:value)
+        m_Container.Append(value: newNode)
     }
 }
 
-extension CStack {
-    public func Pop()->T? {
-        var tempValue : T? //"?" allowing following calling "tempValue = nil", otherwise compiling error for it
+extension CQueue {
+    public func Pop_Front()->T? {
+        var tempValue : T?
         tempValue = nil
         
         if m_Container.head != nil {
@@ -37,20 +38,20 @@ extension CStack {
     }
 }
 
-extension CStack {
-    public func Peek()->T? {
-        var tempValue : T? //"?" allowing following calling "tempValue = nil", otherwise compiling error for it
+extension CQueue {
+    public func Front()->T? {
+        var tempValue : T?
         tempValue = nil
         
         if m_Container.head != nil {
             tempValue = m_Container.head?.data
         }
-
+        
         return tempValue
     }
 }
 
-extension CStack {
+extension CQueue {
     public func Empty()->Bool {
         var ret : Bool = true
         
@@ -61,7 +62,7 @@ extension CStack {
     }
 }
 
-extension CStack {
+extension CQueue {
     public func Count()->Int {
         let ret : Int = m_Container.count
         return ret

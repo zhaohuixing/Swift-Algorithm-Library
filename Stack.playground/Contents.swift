@@ -1,7 +1,3 @@
-//import Cocoa
-
-var str = "Hello, playground"
-
 typealias CStackInt = CStack<Int>
 
 let testStack : CStackInt = CStackInt()
@@ -15,11 +11,14 @@ testStack.Push(value: 6)
 testStack.Push(value: 7)
 testStack.Push(value: 8)
 
+print(testStack.Count())
+
 while testStack.Empty() == false {
     let v = testStack.Peek()
     print(v ?? "v is nil")
     let v2 = testStack.Pop()
     print(v2 ?? "v2 is nil")
+    print(testStack.Count())
 
 }
 
