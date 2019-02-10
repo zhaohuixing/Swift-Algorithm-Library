@@ -1,4 +1,4 @@
-# Swift-Algorithm-Library
+# Swift Algorithm Library
 The project includes a set of Swift generics queue (FIFO) and stack (FILO) classes to match the functionalities of C++ STL queue and stack classes. 
 
 The project implements a set of Swift generics classes 
